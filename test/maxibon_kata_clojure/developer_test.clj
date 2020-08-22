@@ -23,3 +23,11 @@
   100
   (prop/for-all [name gen-developer-name]
     (some #(= name (:name %)) developers)))
+
+(defspec any-developer-should-grab-at-least-0-maxibons
+  100
+  (prop/for-all [name gen-developer-name,
+                 maxibons gen/int]
+    (let [dev {:name name,
+               :grabs maxibons}]
+      (>= (grabs dev) 0))))

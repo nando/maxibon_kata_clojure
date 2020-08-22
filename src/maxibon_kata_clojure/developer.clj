@@ -3,6 +3,11 @@
 
 (def developers (csv/load_developers "Karumies"))
 
+(defn grabs
+  "Returns the number of maxibons the developer likes to grab (if possible!!)"
+  [info]
+  (max 0 (:grabs info)))
+
 (defn names
   "Returns a vector with developer team names (Karumies if ommited!!)"
   []
