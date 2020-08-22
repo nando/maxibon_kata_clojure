@@ -1,5 +1,5 @@
 ![The Cocktail logo][tcklogo] ❤ ![Karumi logo][karumilogo]
-# Maxibon Kata for Clojure. [![Build Status](https://travis-ci.org/nando/MaxibonKataClojure.svg?branch=master)](https://travis-ci.org/nando/MaxibonKataClojure)
+# Maxibon Kata for Clojure. [![Build Status](https://travis-ci.org/nando/maxibon_kata_clojure.svg?branch=master)](https://travis-ci.org/nando/maxibon_kata_clojure)
 
 - We are here to practice [property based testing][property-based-testing].
 - We are going to use [test.check][check] to write our tests.
