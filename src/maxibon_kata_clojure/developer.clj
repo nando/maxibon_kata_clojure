@@ -1,19 +1,10 @@
-(ns maxibon-kata-clojure.developer)
+(ns maxibon-kata-clojure.developer
+  (:require [maxibon-kata-clojure.csv :as csv :refer :all]))
 
-(def developers [
-  { :name "Pedro",
-    :grabs 3 },
-  { :name "Davide",
-    :grabs 0 },
-  { :name "Alberto",
-    :grabs 1 },
-  { :name "Jorge",
-    :grabs 2 },
-  { :name "Sergio",
-    :grabs 1 }])
+(def developers (csv/load_developers "Karumies"))
 
 (defn names
-  "Returns a vector with developer names"
+  "Returns a vector with developer team names (Karumies if ommited!!)"
   []
   (map #(:name %) developers))
 
