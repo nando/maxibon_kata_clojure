@@ -2,15 +2,8 @@
   (:require [clojure.test.check.clojure-test :refer [defspec]]
             [clojure.test.check.generators :as gen]
             [clojure.test.check.properties :as prop]
+            [maxibon-kata-clojure.generators :refer :all]
             [maxibon-kata-clojure.developer :refer :all]))
-
-;; generators
-(def gen-developer-index
-  (gen/choose 0
-              (dec (count developers))))
-
-(def gen-developer-name
-  (gen/elements (names)))
 
 ;; specs
 (defspec info-function-searchs-developer-by-name
