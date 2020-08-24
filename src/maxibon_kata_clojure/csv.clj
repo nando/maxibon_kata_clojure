@@ -35,11 +35,14 @@
     (parse
       (slurp filename))))
 
-(def memoized-csv2hash-map (memoize csv2hash-map))
-
 (defn load_developers
   "Returns a vector with developer team names (Karumies if team_name not present!!)"
   ([]
      (load_developers "Karumies"))
   ([ team_name ]
-     (memoized-csv2hash-map (str team_name ".csv"))))
+     (csv2hash-map (str "./data/" team_name ".csv")))
+  ([ team_name & other_teams]
+     (concat (csv2hash-map (str "./data/" team_name ".csv"))
+             (apply load_developers other_teams))))
+
+(def memoized-developers (memoize load_developers))

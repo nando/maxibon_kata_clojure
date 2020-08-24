@@ -1,7 +1,7 @@
 (ns maxibon-kata-clojure.developer
   (:require [maxibon-kata-clojure.csv :as csv :refer :all]))
 
-(def developers (csv/load_developers "Karumies"))
+(def developers (csv/memoized-developers "Karumies" "Rubyroomers" "OnceRubyroomers"))
 
 (defn add-developer
   "Returns 'developers' with the new developer added"
