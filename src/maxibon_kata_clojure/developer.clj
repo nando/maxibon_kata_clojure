@@ -3,6 +3,12 @@
 
 (def developers (csv/load_developers "Karumies"))
 
+(defn add-developer
+  "Returns 'developers' with the new developer added"
+  [ name grabs ]
+  (conj developers { :name name
+                     :grabs grabs }))
+
 (defn grabs
   "Returns the number of maxibons the developer likes to grab (if possible!!)"
   [info]
@@ -15,5 +21,7 @@
 
 (defn info
   "Receives a developer's name and returns a hash map with her/his data"
-  [ name ]
-  (some #(and (= name (:name %)) %) developers))
+  ([ name ]
+   (some #(and (= name (:name %)) %) developers))
+  ([ team name ]
+   (some #(and (= name (:name %)) %) team)))

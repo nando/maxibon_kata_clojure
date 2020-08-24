@@ -31,3 +31,12 @@
     (let [dev {:name name,
                :grabs maxibons}]
       (>= (grabs dev) 0))))
+
+(defspec add-developer-function-let-us-search-new-developer-info
+  100
+  (prop/for-all [name gen-developer-name,
+                 maxibons gen/int]
+    (let [team (add-developer name maxibons)
+          new-developer (info team name)]
+      (= name (:name new-developer))
+      (= maxibons (:grabs new-developer)))))
