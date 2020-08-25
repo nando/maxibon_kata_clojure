@@ -15,9 +15,11 @@
   (max 0 (:grabs info)))
 
 (defn names
-  "Returns a vector with developer team names (Karumies if ommited!!)"
-  []
-  (map #(:name %) developers))
+  "Returns a vector with developer names"
+  ([]
+   (map #(:name %) developers))
+  ([team]
+   (map #(:name %) team)))
 
 (defn info
   "Receives a developer's name and returns a hash map with her/his data"
