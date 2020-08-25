@@ -10,6 +10,17 @@
 (def gen-developer-name
   (gen/elements (names)))
 
+(def gen-developer-from-csv
+  (gen/elements developers))
+
+(def gen-unpredictible-developer
+  (gen/fmap (fn [[name maxibons]]
+              { :name name
+                :grabs maxibons
+                :team :unpredictible-developers })
+            (gen/tuple gen-developer-name
+                       gen/int)))
+
 (def gen-non-empty-string
   (let [chars "abcdefghijklmnopqrstuvwxyz0123456789"]
     (gen/let [cs (gen/list (gen/elements chars))]
