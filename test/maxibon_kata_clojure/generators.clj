@@ -19,7 +19,7 @@
                 :grabs maxibons
                 :team :unpredictible-developers })
             (gen/tuple gen-developer-name
-                       gen/int)))
+                       gen/small-integer)))
 
 (def gen-non-empty-string
   (let [chars "abcdefghijklmnopqrstuvwxyz0123456789"]
