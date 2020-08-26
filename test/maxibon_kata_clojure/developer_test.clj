@@ -31,5 +31,5 @@
                  maxibons gen/int]
     (let [team (add-developer name maxibons)
           new-developer (info team name)]
-      (= name (:name new-developer))
-      (= maxibons (:grabs new-developer)))))
+      (and (= name (:name new-developer))
+           (= maxibons (:grabs new-developer))))))
