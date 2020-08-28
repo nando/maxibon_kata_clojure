@@ -18,4 +18,10 @@
            (let [ office (create-office),
                   office-after-opening-the-fridge (open-fridge office dev) ]
              (>= (:maxibons office-after-opening-the-fridge) 2))))
-;             (is (>= (:maxibons office-after-opening-the-fridge) 2)))))
+
+(defspec more-than-two-maxibons-after-a-group-of-developers-opens-the-fridge
+         100
+         (prop/for-all [team gen-group-of-developers]
+           (let [ office (create-office),
+                  office-after-opening-the-fridge (open-fridge office team) ]
+             (>= (:maxibons office-after-opening-the-fridge) 2))))
