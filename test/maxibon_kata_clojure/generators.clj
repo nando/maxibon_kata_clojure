@@ -17,7 +17,7 @@
   (gen/fmap (fn [[name maxibons]]
               { :name name
                 :grabs maxibons
-                :team :unpredictible-developers })
+                :origin :unpredictible-developers })
             (gen/tuple gen-developer-name
                        gen/small-integer)))
 
